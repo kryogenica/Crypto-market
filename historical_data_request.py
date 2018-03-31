@@ -1,4 +1,5 @@
 #PULLING HISTORICAL GDAX DATA
+#This uses a third party library from https://github.com/danpaquin/gdax-python
 import time
 import sys
 import datetime

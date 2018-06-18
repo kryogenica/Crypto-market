@@ -1,3 +1,4 @@
+#Ploting moving average and use of SVM for price pridiction outside bollinger bands (r)
 import numpy as np
 import pandas as pd
 

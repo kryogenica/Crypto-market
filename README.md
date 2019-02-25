@@ -1,4 +1,6 @@
 # Crypto-market
+CRYPTO MARKET
+<img src="ETH_values_examples.png" >
 
 Script will pull historical data from gdax's API and put save into a CSV file locally to facilitate the exploration of this data. The API limits the amount of data that one can pull per second.
 

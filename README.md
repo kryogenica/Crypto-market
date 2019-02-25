@@ -15,14 +15,13 @@ In the image above the first row shows an extract of Ethereum high and low price
 Below are matrixes analyzing n previous points of the points (95) that have met the criteria above and compared among them to see if there exists any correlations in the way these points difere from there neighbors.
 
 3 points before spike:
-<img src="Correlations_with_3_span.png">
+<img src="Correlations_with_3_span.png" width="500">
 
 5 points before spike:
-<img src="Correlations_with_5_span.png">
+<img src="Correlations_with_5_span.png" width="500">
 
 7 points before spike:
-<img src="Correlations_with_7_span.png">
+<img src="Correlations_with_7_span.png" width="500">
 
 10 points before spike:
-3 points before spike:
-<img src="Correlations_with_10_span.png">
+<img src="Correlations_with_10_span.png" width="500">

@@ -12,7 +12,7 @@ Following this we analyze point by point comparing if it deviates significantly 
 <img src="Spike_changes_in_range_values.png" width="700">
 In the image above the first row shows an extract of Ethereum high and low price values, the second row shows the range (diference between high and low) of the first row, finally the third row shows the deviation of each point to the moving avergae of 20 time steps. The y axis of the third row is the value of the sigmoind function described above. From the image above one can see that there is only one point with a value higher than 0.5 which would be recored for further analysis described in the following paragrahps.
 
-Below are matrixes analyzing n previous points of the points (95) that have met the criteria above and compared among them to see if there exists any correlations in the way these points difere from there neighbors.
+Below are matrixes comparing the set of the n previous points of the (95) points that have met the criteria above. These matrixes compare one set of points to another set to see if there exists any correlations among them, therefore exploring if there are any patterns that may indicate when a spike might occure.
 
 3 points before spike:
 <img src="Correlations_with_3_span.png" width="500">

@@ -14,14 +14,17 @@ In the image above the first row shows an extract of Ethereum high and low price
 
 Below are matrixes comparing the set of the n previous points of the (95) points that have met the criteria above. These matrixes compare one set of points to another set to see if there exists any correlations among them, therefore exploring if there are any patterns that may indicate when a spike might occure.
 
-3 points before spike:
+Matrix of Pearson correlation between sets of 3 points before spike:
 <img src="Correlations_with_3_span.png" width="500">
 
-5 points before spike:
+Matrix of Pearson correlation between sets of 5 points before spike:
 <img src="Correlations_with_5_span.png" width="500">
 
-7 points before spike:
+Matrix of Pearson correlation between sets of 7 points before spike:
 <img src="Correlations_with_7_span.png" width="500">
 
-10 points before spike:
+Matrix of Pearson correlation between sets of 10 points before spike:
 <img src="Correlations_with_10_span.png" width="500">
+
+More to come:
+I will soon be uploading the different types of curves with high probability of inducing a spikes

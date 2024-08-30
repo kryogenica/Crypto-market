@@ -62,7 +62,7 @@ To run this application, you need the following Python packages:
 3. **Install the required packages**:
 
     ```bash
-    pip install streamlit
+    pip install requirements.txt
     ```
 
 ## Running the App

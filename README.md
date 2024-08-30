@@ -1,8 +1,8 @@
 # Crypto-market
-<img src="bollinger_analysis.png" width="700">
+<img src="Images/bollinger_analysis.png" width="700">
 
 Script will pull historical data from gdax's API and save into a CSV file locally to facilitate the exploration of this data. The API limits the amount of data that one can pull per second.
-<!-- <img src="ETH_values_examples.png" width="400"> -->
+<!-- <img src="Images/ETH_values_examples.png" width="400"> -->
 
 Exploring spikes in the change of price:
 
@@ -42,7 +42,7 @@ To run this application, you need the following Python packages:
 
 ## Running the App
 
-To run the app, execute the following command in your terminal:
+To run the app, execute the following command in your terminal where app.py and the data is located:
 
 ```bash
 streamlit run app.py
@@ -50,26 +50,26 @@ streamlit run app.py
 
 Following this we analyze point by point comparing if it deviates significantly from the mean of the previous specified time window. For this a sigmoind function of the form 1/(1 + exp((Intensity * Mean_of_the_previous_time_window) - x) is used, where x is the point being analyzed. In this example the varaible Intensity serves as a way to determine how significant the deviation should be. All points that make this function have a value higher than 0.5 are recorded for an Intensity equal to 4.
 
-<img src="Spike_changes_in_range_values.png" width="700">
+<img src="Images/Spike_changes_in_range_values.png" width="700">
 
 In the image above the first row shows an extract of Ethereum high and low price values, the second row shows the range (diference between high and low) of the first row, finally the third row shows the deviation of each point to the moving average of 20 time steps. The y axis of the third row is the value of the sigmoind function described above. From the image above one can see that there is only one point with a value higher than 0.5 which would be recored for further analysis described in the following paragrahps.
 
 Below are matrixes comparing the set of the n previous points of the (95) points that have met the criteria above. These matrixes compare one set of points to another set to see if there exists any correlations among them, therefore exploring if there are any patterns that may indicate when a spike might occure.
 
 Matrix of Pearson correlation between sets of 3 points before spike:
-<img src="Correlations_with_3_span.png" width="500">
+<img src="Images/Correlations_with_3_span.png" width="500">
 
 Matrix of Pearson correlation between sets of 5 points before spike:
-<img src="Correlations_with_5_span.png" width="500">
+<img src="Images/Correlations_with_5_span.png" width="500">
 
 Matrix of Pearson correlation between sets of 7 points before spike:
-<img src="Correlations_with_7_span.png" width="500">
+<img src="Images/Correlations_with_7_span.png" width="500">
 
 Matrix of Pearson correlation between sets of 10 points before spike:
-<img src="Correlations_with_10_span.png" width="500">
+<img src="Images/Correlations_with_10_span.png" width="500">
 
 Additionaly predicted the moving of prices using RBF kernel within a Support Vector Machine:
-<img src="ETH-RBF_kernel-Sentiment.png" width="500">
+<img src="Images/ETH-RBF_kernel-Sentiment.png" width="500">
 
 More to come:
 I will soon be uploading the different types of curves with high probability of inducing a spikes

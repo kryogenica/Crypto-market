@@ -8,9 +8,34 @@ Exploring spikes in the change of price:
 
 The script titled Plotting_moving_average.py calculates the absolute change of the crypto price per time stamp ( |High price - Low price| ) for a give time data series, this is given by the name "range". After this it calculates the moving average of the range for a given time window. The window is 20 time steps of the time series data time step which for this example is 1 hour. We calculate this for every single point in time.
 
-# Streamlit App
+## Streamlit App
 
-There is a Streamlit application that provides an interactive control panel with sliders. You can reset the sliders to their initial values by pressing a button.
+The repository includes a Streamlit application that provides an interactive and intuitive control panel, allowing users to explore and analyze cryptocurrency market data with adjustable parameters.
+
+### Features and Controls
+
+The Streamlit app offers the following controls:
+
+1. **Upper Value Slider** (`Upper`):
+   - **Purpose**: This slider allows the user to set an upper limit for the dataset range they want to analyze.
+   - **Functionality**: By adjusting this slider, users can focus on a specific upper bound of the data, effectively narrowing down the range of historical data they are examining. This is particularly useful for focusing on more recent data or a specific time period.
+
+2. **Difference Slider** (`Lower`):
+   - **Purpose**: This slider sets the difference (or range) between the upper limit and a derived lower limit.
+   - **Functionality**: Users can control the span of data they wish to analyze by adjusting the difference between the upper and lower bounds. This helps in zooming into specific intervals of data where significant changes might have occurred.
+
+3. **Window Size Slider** (`Window`):
+   - **Purpose**: This slider allows the user to set the size of the moving window for calculating the moving average of the price range.
+   - **Functionality**: By adjusting the window size, users can analyze the data with different levels of smoothness. A smaller window size will make the analysis more sensitive to short-term fluctuations, while a larger window size will smooth out these fluctuations, highlighting longer-term trends.
+
+4. **Sigma Slider** (`Sigma`):
+   - **Purpose**: This slider controls the sensitivity of the deviation analysis, particularly influencing the threshold for detecting significant deviations from the moving average.
+   - **Functionality**: Users can adjust the `Sigma` value to fine-tune the detection of price spikes. A lower sigma value makes the system more sensitive to minor deviations, while a higher value focuses only on major deviations. This is useful for identifying significant market events or price anomalies.
+
+### Interactive Analysis
+
+- **Real-Time Adjustments**: As users adjust these sliders, the app recalculates the moving averages, deviations, and any other relevant metrics in real-time. This allows users to see immediate feedback and understand how different parameters affect the analysis.
+- **Reset Functionality**: Users can reset all the sliders to their initial default values with a single button click, allowing for a quick return to the baseline settings.
 
 ## Requirements
 
@@ -47,6 +72,8 @@ To run the app, execute the following command in your terminal where app.py and 
 ```bash
 streamlit run app.py
 ```
+
+## Other scripts
 
 Following this we analyze point by point comparing if it deviates significantly from the mean of the previous specified time window. For this a sigmoind function of the form 1/(1 + exp((Intensity * Mean_of_the_previous_time_window) - x) is used, where x is the point being analyzed. In this example the varaible Intensity serves as a way to determine how significant the deviation should be. All points that make this function have a value higher than 0.5 are recorded for an Intensity equal to 4.
 

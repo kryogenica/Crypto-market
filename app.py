@@ -54,13 +54,14 @@ window = st.sidebar.slider("Window", min_value=20, max_value=200, key='window')
 sigma = st.sidebar.slider("Sigma", min_value=0.1, max_value=5.0, key='sigma')
 
 # Explanation box below the sliders
-st.sidebar.markdown("""
+st.markdown("""
 ### Explanation:
 - **Upper**: Sets the upper limit of the data range for analysis.
 - **Lower**: Controls the difference between the upper and lower limits, adjusting the range of data analyzed.
 - **Window**: Defines the size of the moving average window, affecting the sensitivity to short-term or long-term trends.
 - **Sigma**: Adjusts the sensitivity for detecting significant deviations in price, with lower values detecting smaller spikes.
 """)
+
 
 # DEFINE A FUNCTION TO BE USED FOR CURVE FITTING
 # This function models the data with an exponential decay term and a polynomial of degree 3
@@ -125,18 +126,6 @@ for i in range(1, 11):
 # Fit a 10th degree polynomial to the 'Open' data
 z = np.polyfit(range(0, upper - lower), open_eth_data['Open'][lower - 1:upper - 1], 10)
 p = np.poly1d(z)
-
-
-
-# Summary Explanation in a Collapsible Section
-with st.expander("Explanation of Charts"):
-    st.markdown("""
-    - **Heikin-Ashi Chart**: A smoothed candlestick chart that filters market noise, making trends easier to spot.
-    - **10-Degree Polynomial Fit**: Displays a polynomial curve fitted to the price data, highlighting trends and patterns that might not be immediately visible.
-    - **Error of Polynomial Fit**: Shows the error between the actual data and the fitted polynomial, providing insight into the accuracy and reliability of the fit.
-    - **Moving Average Deviation**: Displays price deviations from the moving average, highlighting significant market movements.
-    """)
-
 
 # FIGURE 1: Heikin-Ashi Candlestick Chart
 fig1, ax_heikin = plt.subplots()

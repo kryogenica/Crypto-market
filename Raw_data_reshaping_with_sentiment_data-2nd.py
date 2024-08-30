@@ -6,7 +6,7 @@ import time
 ##########Difernece between High and low in time window
 
 #loads csv data into a ndarray 
-my_data = np.genfromtxt('Historical_eth-usd_data_minute_step.txt',delimiter=',')
+my_data = np.genfromtxt('Historical_eth-usd_data_hourly_step.txt',delimiter=',')
 sentiment = np.genfromtxt('clf_SVM_#ethereum_2018-04-11_2018-04-20.csv',delimiter=',')[1:,1:3]            
 window_step=21 #Sets the window size
 

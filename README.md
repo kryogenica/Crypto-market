@@ -1,6 +1,6 @@
 # Crypto-market
+<img src="bollinger_analysis.png" width="700">
 <img src="ETH_values_examples.png" width="500">
-<img src="bollinger_analysis.png" width="500">
 
 Script will pull historical data from gdax's API and save into a CSV file locally to facilitate the exploration of this data. The API limits the amount of data that one can pull per second.
 

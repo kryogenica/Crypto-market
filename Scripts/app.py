@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
-from mpl_finance import candlestick2_ohlc
+from mplfinance.original_flavor import candlestick_ohlc
 
 # Load data (this will need to point to the correct file)
 data = np.genfromtxt('Historical_eth-usd_data_hourly_step.txt', delimiter=',')
@@ -141,10 +141,23 @@ with st.expander("Explanation of Charts"):
 # FIGURE 1: Heikin-Ashi Candlestick Chart
 fig1, ax_heikin = plt.subplots()
 
-candlestick2_ohlc(ax_heikin, open_eth_data['Open'][lower:upper],
-                  high_eth_data['High'][lower:upper],
-                  low_eth_data['Low'][lower:upper],
-                  close_eth_data['Close'][lower:upper], width=0.6)
+# candlestick2_ohlc(ax_heikin, open_eth_data['Open'][lower:upper],
+#                   high_eth_data['High'][lower:upper],
+#                   low_eth_data['Low'][lower:upper],
+#                   close_eth_data['Close'][lower:upper], width=0.6)
+
+# Prepare the data in the format required by candlestick_ohlc
+ohlc_data = []
+for j, i in enumerate(range(lower, upper)):
+    ohlc_data.append([j, 
+                      open_eth_data['Open'][i], 
+                      high_eth_data['High'][i], 
+                      low_eth_data['Low'][i], 
+                      close_eth_data['Close'][i]])
+
+# Now plot using candlestick_ohlc
+candlestick_ohlc(ax_heikin, ohlc_data, width=0.6, colorup='g', colordown='r')
+
 # Plot the smoothed Heikin-Ashi 'Open' prices on the same chart
 ax_heikin.plot(range(0, upper - lower), heikin_rm_eth_data[lower - 1:upper - 1])
 # Plot the lower Bollinger Band on the same chart

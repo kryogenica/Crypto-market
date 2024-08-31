@@ -43,7 +43,7 @@ if uploaded_file is not None:
 
         # Set initial values if not already set
         if 'upper' not in st.session_state:
-            st.session_state['upper'] = 3850
+            st.session_state['upper'] = 1000
         if 'diff' not in st.session_state:
             st.session_state['diff'] = 200
         if 'window' not in st.session_state:

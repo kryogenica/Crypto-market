@@ -220,7 +220,7 @@ if uploaded_file is not None:
 else:
     st.info('''
             Please upload a file to load the data.
-            
+
             **Data Format:**  
             The uploaded file should contain historical data in a CSV format,
             where each row represents a specific timestamp with the following columns:
@@ -229,4 +229,6 @@ else:
             3. High price
             4. Open price
             5. Close price
-            6. Volume''')
+            6. Volume
+            
+            You can download an example file [here](https://github.com/kryogenica/Crypto-market/blob/master/Scripts/Historical_eth-usd_data_hourly_step.txt).''')

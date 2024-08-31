@@ -218,4 +218,15 @@ if uploaded_file is not None:
     except Exception as e:
         st.error(f"Error loading the file: {e}")
 else:
-    st.info("Please upload a file to load the data.")
+    st.info('''
+            Please upload a file to load the data.
+            
+            **Data Format:**  
+            The uploaded file should contain historical data in a CSV format,
+            where each row represents a specific timestamp with the following columns:
+            1. Timestamp (Unix time format)
+            2. Low price
+            3. High price
+            4. Open price
+            5. Close price
+            6. Volume''')

@@ -1,16 +1,8 @@
-# Crypto-market
+# Crypto-market Streamlit App
 <img src="Images/bollinger_analysis.png" width="700">
 
-Script will pull historical data from gdax's API and save into a CSV file locally to facilitate the exploration of this data. The API limits the amount of data that one can pull per second.
-<!-- <img src="Images/ETH_values_examples.png" width="400"> -->
-
-Exploring spikes in the change of price:
-
-The script titled Plotting_moving_average.py calculates the absolute change of the crypto price per time stamp ( |High price - Low price| ) for a give time data series, this is given by the name "range". After this it calculates the moving average of the range for a given time window. The window is 20 time steps of the time series data time step which for this example is 1 hour. We calculate this for every single point in time.
-
-## Streamlit App
-
-The repository includes a Streamlit application that provides an interactive and intuitive control panel, allowing users to explore and analyze cryptocurrency market data with adjustable parameters.
+Streamlit application that provides an interactive and intuitive control panel, allowing users to explore and analyze cryptocurrency market data with adjustable parameters.
+**Explore this app live [here](https://share.streamlit.io/app/ethboiler/)**
 
 ### Features and Controls
 
@@ -74,6 +66,13 @@ streamlit run app.py
 ```
 
 ## Other scripts
+
+The repository also includes a script to pull historical data from gdax's API and save into a CSV file locally to facilitate the exploration of this data. The API limits the amount of data that one can pull per second.
+<img src="Images/ETH_values_examples.png" width="300">
+
+Exploring spikes in the change of price:
+
+The script titled Plotting_moving_average.py calculates the absolute change of the crypto price per time stamp ( |High price - Low price| ) for a give time data series, this is given by the name "range". After this it calculates the moving average of the range for a given time window. The window is 20 time steps of the time series data time step which for this example is 1 hour. We calculate this for every single point in time.
 
 Following this we analyze point by point comparing if it deviates significantly from the mean of the previous specified time window. For this a sigmoind function of the form 1/(1 + exp((Intensity * Mean_of_the_previous_time_window) - x) is used, where x is the point being analyzed. In this example the varaible Intensity serves as a way to determine how significant the deviation should be. All points that make this function have a value higher than 0.5 are recorded for an Intensity equal to 4.
 

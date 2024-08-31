@@ -6,7 +6,25 @@ from scipy.optimize import curve_fit
 from mplfinance.original_flavor import candlestick_ohlc
 
 # Load data (this will need to point to the correct file)
-data = np.genfromtxt('Historical_eth-usd_data_hourly_step.txt', delimiter=',')
+#data = np.genfromtxt('Historical_eth-usd_data_hourly_step.txt', delimiter=',')
+
+# Create a sidebar for file upload
+st.sidebar.title("File Uploader")
+
+# File uploader widget
+uploaded_file = st.sidebar.file_uploader("Choose a file")
+
+if uploaded_file is not None:
+    # Assuming it's a CSV file
+    try:
+        data = np.genfromtxt(uploaded_file, delimiter=',')
+        st.write("Data loaded successfully!")
+        st.write(df)
+    except Exception as e:
+        st.error(f"Error loading the file: {e}")
+else:
+    st.info("Please upload a file to load the data.")
+
 
 # Define initial dataframes
 open_eth_data = pd.DataFrame({'Open': data[1:, 3]})
